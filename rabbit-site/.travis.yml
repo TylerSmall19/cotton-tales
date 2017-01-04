@@ -5,3 +5,9 @@ rvm:
  - rbx-2
 # uncomment and edit the following line if your project needs to run something other than `rake`:
 # script: bundle exec rspec spec
+services:
+  - postgresql
+
+test:
+  adapter: postgresql
+  database: travis_ci_test
