@@ -17,12 +17,22 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(title: params[:article][:title], body: params[:article][:body], author_id: session[:id])
+    p params[:article]
+    p "Works!"
+    @article = Article.new(article_params)
+    @article.author = current_user
     if @article.save
       render 'show'
     else
+      @categories = Category.all
       render 'new'
     end
+    # render text: "Hello World"
+  end
+
+  private
+  def article_params
+    params.require(:article).permit(:title, :body, :categories)
   end
 
 end

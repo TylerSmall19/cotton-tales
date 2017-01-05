@@ -6,29 +6,19 @@
   </ul>
 <% end %>
 <%= form_for @article do |f| %>
-  <div>
     <%= f.label :title %>
-  </div>
-  <div>
     <%= f.text_field :title %>
-  </div>
-  <div>
+
     <%= f.label :body %>
-  </div>
-  <div>
     <%= f.cktext_area :body, rows: 10 %>
-  </div>
 
-  <div>
     <%= f.label :category %><br>
-    <% @categories.each do |category| %>
-      <% name = category.name %>
-      <%= check_box_tag(:name) %>
-      <%= label_tag(:name, "Select #{name}") %>
-    <% end %>
-  </div>
 
-    <div>
+    <% @categories.each do |category| %>
+      <%= check_box_tag("article[categories][]", category.id, false) %>
+      <%= category.name %>
+    <% end %>
+
     <%= f.submit %>
-  </div>
+
 <% end %>
