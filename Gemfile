@@ -28,7 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'ckeditor'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -39,7 +39,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'faker'
   gem 'rake'
-  gem 'capybara'
 end
 
 group :development do
