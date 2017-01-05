@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav> <%= link_to 'Register', new_user_path %></nav>
+  <nav> <%= link_to 'Register', new_user_path %> | <%= render "login" %></nav>
 
 <%= yield %>
 
