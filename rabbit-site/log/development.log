@@ -1,6 +1,0 @@
-  [1m[36m (60.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
-  [1m[35m (4.6ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Migrating to CreateCategorizations (20170104234003)
-  [1m[35m (0.2ms)[0m  BEGIN
-  [1m[36m (5.6ms)[0m  [1mROLLBACK[0m
