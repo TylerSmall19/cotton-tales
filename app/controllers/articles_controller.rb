@@ -18,7 +18,6 @@ class ArticlesController < ApplicationController
 
   def create
     p params[:article]
-    p "Works!"
     @article = Article.new(article_params)
     @article.author = current_user
     if @article.save
@@ -27,12 +26,11 @@ class ArticlesController < ApplicationController
       @categories = Category.all
       render 'new'
     end
-    # render text: "Hello World"
   end
 
   private
   def article_params
-    params.require(:article).permit(:title, :body, :categories)
+    params.require(:article).permit(:title, :body, categories: [])
   end
 
 end

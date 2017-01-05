@@ -9,7 +9,7 @@ feature "creating an article" do
     visit "articles/new"
     fill_in 'article_title', :with => 'Test'
     fill_in 'article_body', :with => 'Test Body'
-    p page.all(:css, 'input#cute')
+    page.check "#cute"
     expect{ click_link "Create" }.to change(Article, :count).by(1)
   end
 end
