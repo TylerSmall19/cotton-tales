@@ -5,41 +5,53 @@ feature 'visiting the homepage' do
   context 'when a user is logged in' do
     scenario 'there is a link to the new article form' do
       visit '/'
+      user = User.create(username: 'sam', password: 'password')
 
-      expect(page).to have_content("#new-article")
+      within("#login") do
+        fill_in 'username', with: 'sam'
+        fill_in 'password', with: 'password'
+      end
 
-      click_button 'New Bunny Tail'
+      click_button 'Login'
+
+      expect(page).to have_content "New Bunny Tail"
+
+      click_link 'New Bunny Tail'
       expect(page).to have_current_path('/articles/new')
     end
 
     scenario 'if a user is logged in, the user can log out' do
       visit '/'
+      user = User.create(username: 'sam', password: 'password')
 
-      expect(page).to have_content("#logout")
+      within("#login") do
+        fill_in 'username', with: 'sam'
+        fill_in 'password', with: 'password'
+      end
 
-      click "Logout"
+      click_button 'Login'
 
-      expect(page).to have_content 'Success'
+      expect(page).to have_content "Logout"
+
+      click_link "Logout"
+
+      expect(page).to have_content 'Register'
     end
   end
 
   context 'when no user is logged in' do
     scenario 'the user can login' do
-      background do
-        User.make(username: 'samstew726', password: 'password')
-      end
+      user = User.create(username: 'samstew726', password: 'password')
 
       visit '/'
 
-      expect(page).to have_content("#login")
-
       within("#login") do
-        fill_in 'Username', with: 'samstew726'
-        fill_in 'Password', with: 'password'
+        fill_in 'username', with: 'samstew726'
+        fill_in 'password', with: 'password'
       end
 
-      click_button 'Sign in'
-      expect(page).to have_content 'Success'
+      click_button 'Login'
+      expect(page).to have_content 'New Bunny Tail'
     end
 
     scenario 'there is a link to a registration page' do
@@ -52,7 +64,7 @@ feature 'visiting the homepage' do
 
   context 'what is always on the homepage' do
     scenario 'the user sees a list of recent articles and can view them' do
-      most_recent_article = mock_model("Article")
+      most_recent_article = Article.new
 
       visit '/'
 
