@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :articles
   # get "categories/:id/articles" => "categories#show"
   resources :users, only: [:new]
-  resources :articles
 
   root 'welcome#index'
   post '/sessions', to: 'sessions#create'
