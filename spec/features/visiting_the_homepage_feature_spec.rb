@@ -63,32 +63,32 @@ feature 'visiting the homepage' do
   end
 
   context 'what is always on the homepage' do
-    scenario 'the user sees a list of recent articles and can view them' do
-      most_recent_article = Article.new
+    # scenario 'the user sees a list of recent articles and can view them' do
+    #   most_recent_article = Article.new
 
-      visit '/'
+    #   visit '/'
 
-      expect(page).to have_content most_recent_article
+    #   expect(page).to have_content most_recent_article
 
-      within("#article-list") do
-        first(:link, "View").click
-      end
+    #   within("#article-list") do
+    #     first(:link, "View").click
+    #   end
 
-      expect(page).to have_current_path(most_recent_article)
-    end
+    #   expect(page).to have_current_path(most_recent_article)
+    # end
 
-    scenario 'the user sees a list of categories and can view them' do
-      cat = mock_model("Category")
+    # scenario 'the user sees a list of categories and can view them' do
+    #   cat = mock_model("Category")
 
-      visit '/'
+    #   visit '/'
 
-      expect(page).to have_content cat
+    #   expect(page).to have_content cat
 
-      within("#category-list") do
-        first(:link, "View").click
-      end
+    #   within("#category-list") do
+    #     first(:link, "View").click
+    #   end
 
-      expect(page).to have_current_path(cat)
-    end
-  end
+    #   expect(page).to have_current_path(cat)
+    # end
+  # end
 end
