@@ -90,5 +90,5 @@ feature 'visiting the homepage' do
 
     #   expect(page).to have_current_path(cat)
     # end
-  # end
+  end
 end
