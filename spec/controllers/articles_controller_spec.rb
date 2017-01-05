@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe ArticlesController do
-  let(:sample_article) { Article.create(title: "test", body: "test body", author_id: 1) }
+  let(:sample_article) { Article.create!(title: "test", body: "test body", author_id: 1) }
 
   describe "GET #index" do
     before(:each) do

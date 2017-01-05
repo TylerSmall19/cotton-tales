@@ -1,6 +1,8 @@
 <h1>All Categories!</h1>
 <ol>
-  <% @categories.each do |category| %>
-    <strong><li><%= category.name %></li></strong>
-  <%end%>
+  <% if @categories %>
+    <% @categories.each do |category| %>
+      <strong><li><%= link_to category.name, category_path(category) %></li></strong>
+    <%end%>
+  <% end %>
 </ol>

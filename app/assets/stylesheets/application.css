@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+ #login {
+  display: inline-block;
+ }
+
+ nav {
+  float: right;
+ }
+
+ body {
+  background-color: #0A3040;
+  color: white;
+ }
+
+ #website-title {
+  font-family: "Princess Sofia";
+  color: #23AAE1;
+  font-size: 4em;
+ }
+
+ a {
+  color: #FF4164;
+ }

@@ -1,0 +1,12 @@
+<% if @errors %>
+    <%= @errors %>
+  <% end %>
+
+<%= form_tag '/sessions', html: { id: "login" } do %>
+  <%= hidden_field_tag :errors, 'Invalid%20username%20or%20password' %>
+  <%= text_field_tag :username, nil, placeholder: "username" %>
+  <%= password_field_tag :password, nil, placeholder: "password" %>
+  <%= submit_tag "Login" %>
+
+<% end %>
+

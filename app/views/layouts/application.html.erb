@@ -4,10 +4,19 @@
   <title>RabbitSite</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%=  stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Princess+Sofia'%>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav> <%= link_to 'Home', root_path %> |
+    <% if current_user %>
+      <%= link_to 'Logout', logout_path %> |  <%= link_to 'New Bunny Tail', new_article_path %> </nav>
+    <% else %>
+      <%= link_to 'Register', new_user_path %> | <span id="login"> <%= render "users/login" %> </span> </nav>
+  <% end %>
 
+  <h1 id="website-title"> The Rabbit Hole </h1>
 <%= yield %>
 
 </body>

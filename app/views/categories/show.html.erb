@@ -1,7 +1,17 @@
-<h1> Category: <%= @category.name %> </h1>
-<%@category.articles.each do |article| %>
-  <strong><p><%= article.title %></p></strong>
-  <p><%= article.body %></p>
+
+<% if @category %>
+  <h1> Category: <%= @category.name %> </h1>
+  <% if @category.articles.any? %>
+   <ol class="inline recent-articles"> <% @category.articles.each do |article| %>
+      <strong><li><p><%= article.title %></p></li></strong>
+      <p><%= article.body %></p>
+      <br />
+      <p><%= link_to "Show More", article_path(article) %></p>
+    <%end%>
+    </ol>
+  <%else%>
+    <p>No articles to display</p>
+  <%end%>
 <%end%>
 
 
