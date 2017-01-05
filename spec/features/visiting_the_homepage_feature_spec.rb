@@ -45,7 +45,7 @@ feature 'visiting the homepage' do
     scenario 'there is a link to a registration page' do
       visit '/'
 
-      click_button 'New Bunny Tail'
+      click_link 'Register'
       expect(page).to have_current_path new_user_path
     end
   end
