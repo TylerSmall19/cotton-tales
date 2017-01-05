@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav> <%= link_to 'Register', new_user_path %> | <%= render "login" %> | <%= link_to 'Logout', logout_path %> </nav>
+  <nav> <%= link_to 'Home', root_path %> | <%= link_to 'Register', new_user_path %> | <%= link_to 'Logout', logout_path %> | <span id="login"> <%= render "login" %> </span> </nav>
 
 <%= yield %>
 
