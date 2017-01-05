@@ -13,7 +13,7 @@
     <% if current_user %>
       <%= link_to 'Logout', logout_path %> |  <%= link_to 'New Bunny Tail', new_article_path %> </nav>
     <% else %>
-      <%= link_to 'Register', new_user_path %> | <span id="login"> <%= render "users/login" %> </span></nav>
+      <%= link_to 'Register', new_user_path %> |  <%= link_to 'Login', sessions_new_path %></span></nav>
   <% end %>
 
   <h1 id="website-title"> The Rabbit Hole </h1>

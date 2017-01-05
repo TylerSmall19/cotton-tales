@@ -1,0 +1,9 @@
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
+
+<br>
+
+<span id="login"> <%= render "users/login" %>

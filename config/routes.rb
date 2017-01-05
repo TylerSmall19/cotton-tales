@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # end
 
   root 'welcome#index'
+  get '/sessions/new', to: 'sessions#new'
   post '/sessions', to: 'sessions#create'
   get '/sessions', to: 'sessions#destroy', as: 'logout'
 

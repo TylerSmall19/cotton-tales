@@ -1,6 +1,3 @@
-<% if @errors %>
-    <%= @errors %>
-  <% end %>
 
 <%= form_tag '/sessions', html: { id: "login" } do %>
   <%= hidden_field_tag :errors, 'Invalid%20username%20or%20password' %>
