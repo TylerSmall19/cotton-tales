@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :users, only: [:new]
 
   root 'welcome#index'
-  post '/sessions', to: 'welcome#index'
+  post '/sessions', to: 'sessions#create'
 end
