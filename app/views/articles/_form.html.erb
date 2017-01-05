@@ -1,0 +1,34 @@
+<% if @article.errors.any? %>
+  <ul>
+    <%= @article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= form_for @article do |f| %>
+  <div>
+    <%= f.label :title %>
+  </div>
+  <div>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :body %>
+  </div>
+  <div>
+    <%= f.cktext_area :body, rows: 10 %>
+  </div>
+
+  <div>
+    <%= f.label :category %><br>
+    <% @categories.each do |category| %>
+      <% name = category.name %>
+      <%= check_box_tag(:name) %>
+      <%= label_tag(:name, "Select #{name}") %>
+    <% end %>
+  </div>
+
+    <div>
+    <%= f.submit %>
+  </div>
+<% end %>
