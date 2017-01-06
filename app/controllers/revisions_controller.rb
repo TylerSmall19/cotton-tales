@@ -7,7 +7,7 @@ class RevisionsController < ApplicationController
   def show
     @revision = Revision.where(article_id: params[:article_id], id: params[:id])
   end
-# GET /articles/:article_id/revisions/new
+# GET /articles/:article_id/revisions/new (also edit article)
   def new
     @revision = Revision.new
   end
