@@ -32,6 +32,10 @@
   font-family: "Princess Sofia";
   color: #23AAE1;
   font-size: 5em;
+  margin-right: auto;
+  margin-left: auto;
+  margin: 0 -9999rem;
+  padding: 0.25rem 9999rem;
  }
 
  a {
