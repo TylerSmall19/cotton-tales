@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # resources :categories do
   #   resources :articles
   # end
-
+  resources :revisions, only: [:show, :index, :create, :new]
   resources :articles
   get "/articles/:id/edit" => "revisions#new"
   # get "categories/:id/articles" => "categories#show"
