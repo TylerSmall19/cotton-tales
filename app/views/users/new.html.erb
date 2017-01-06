@@ -1,8 +1,9 @@
 <% if @errors %>
-  <% @errors.each do |error| %>
-    <%= error %>
-    hello
-  <% end %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
 <% end %>
 
 <%= form_for @user, url: { action: "create"}, html: { id: "new-user-form"} do |f|  %>
