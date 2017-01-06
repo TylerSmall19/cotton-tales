@@ -3,10 +3,11 @@ require 'rails_helper'
 describe RevisionsController do
   let(:user) {User.create(username: "em", password: "p")}
   let(:sample_revision) {Revision.create(body: "Revision body", article_id: 1, author_id: 1)}
+  let(:article) {Article.create(title: "Test", body: "body", author: user)}
 
   describe "GET #index" do
     before(:each) do
-      get :index, {article_id: 1}
+      get :index, {article_id: article.id}
     end
     it "responds with status code 200" do
       expect(response).to have_http_status 200

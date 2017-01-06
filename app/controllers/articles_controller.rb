@@ -4,10 +4,10 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    p params
     @article = Article.find_by(id: params[:id])
     @revisions = @article.revisions
     @article.update_article
+    p @article.body
   end
 
   # def edit

@@ -4,8 +4,8 @@
 <ul class='articles-list'>
   <%  @revisions.each do |revision| %>
     <li id=<%="revision-" + "#{revision.id}" %> >
-      <li><%=revision.body%>
-      <li><%=revision.author.username%>
+      <%=revision.body.html_safe%>
+      <%=revision.author.username%>
     </li>
   <% end %>
 </ul>
