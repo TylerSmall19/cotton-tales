@@ -4,15 +4,12 @@ class Revision < ActiveRecord::Base
 
   validates :body, presence: true
   validates :author, presence: true
-  before_validation :set_author
+
+  def set_author
+    self.author = User.create(username: generate_user, password: generate_password)
+  end
 
   private
-    def set_author
-      if self.author.nil?
-        self.author = User.create(username: generate_user, password: generate_password)
-      end
-    end
-
     def generate_user
       "Guest-" + SecureRandom.hex(3)
     end

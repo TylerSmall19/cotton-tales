@@ -18,7 +18,7 @@ RSpec.describe Revision, type: :model do
     end
     it "should be created with a random author" do
       count = Revision.all.count
-      revision_two.save
+      revision = Revision.create(body: "test body", article_id: 1, author_id: 1)
       expect(Revision.count).to eq(count+1)
     end
   end

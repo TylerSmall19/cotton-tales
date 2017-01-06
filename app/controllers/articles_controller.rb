@@ -7,11 +7,12 @@ class ArticlesController < ApplicationController
     @article = Article.find_by(id: params[:id])
     @revisions = @article.revisions
     @article.update_article
+    p @article.body
   end
 
-  def edit
-    @article = Article.find_by(id: params[:id])
-  end
+  # def edit
+  #   @article = Article.find_by(id: params[:id])
+  # end
 
   def new
     @article = Article.new
