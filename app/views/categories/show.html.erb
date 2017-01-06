@@ -4,7 +4,7 @@
   <% if @category.articles.any? %>
    <ol class="inline recent-articles"> <% @category.articles.each do |article| %>
       <strong><li><p><%= article.title %></p></li></strong>
-      <p><%= article.body %></p>
+      <p><%= article.body.html_safe %></p>
       <br />
       <p><%= link_to "Show More", article_path(article) %></p>
     <%end%>
