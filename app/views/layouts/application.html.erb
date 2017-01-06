@@ -9,7 +9,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav> <%= link_to 'Home', root_path %> |
+  <nav>
+    <%= link_to 'Home', root_path %> |
     <% if current_user %>
       <%= link_to 'Logout', logout_path %> |  <%= link_to 'New Bunny Tail', new_article_path %> | <span id='username-nav'>Logged in as <%= current_user.username %></span></nav>
     <% else %>

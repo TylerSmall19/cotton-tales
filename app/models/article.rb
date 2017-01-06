@@ -36,7 +36,11 @@ class Article < ActiveRecord::Base
     self
   end
 
-private 
+  def self.search(parameter)
+    where("body LIKE ?", "%#{parameter}%")
+  end
+
+private
   def is_thumbnail?
   	self.body.include?("img")
   end
