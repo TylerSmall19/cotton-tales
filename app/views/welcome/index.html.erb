@@ -1,8 +1,8 @@
 
 <h1>Categories</h1>
-<div id='category-list'>
-  <% if @categories.any?  %>
-    <ul>
+<div>
+  <ul id='category-list'>
+    <% if @categories.any?  %>
       <% @categories.each do |cat| %>
         <li><%= link_to cat.name, category_path(cat) %></li>
       <% end %>

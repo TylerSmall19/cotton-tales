@@ -70,18 +70,18 @@ feature 'visiting the homepage' do
     #   expect(page).to have_current_path(most_recent_article)
     # end
 
-    # scenario 'the user sees a list of categories and can view them' do
-    #   cat = mock_model("Category")
+    scenario 'the user sees a list of categories and can view them' do
+      cat = Category.create(name: "Cute")
 
-    #   visit '/'
+      visit '/'
 
-    #   expect(page).to have_content cat
+      expect(page).to have_content "Cute"
 
-    #   within("#category-list") do
-    #     first(:link, "View").click
-    #   end
+      within("#category-list") do
+        first(:link, "Cute").click
+      end
 
-    #   expect(page).to have_current_path(cat)
-    # end
+      expect(page).to have_current_path category_path(cat)
+    end
   end
 end
