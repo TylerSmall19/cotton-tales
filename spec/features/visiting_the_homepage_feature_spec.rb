@@ -4,7 +4,7 @@ feature 'visiting the homepage' do
 
   context 'when a user is logged in' do
     scenario 'there is a link to the new article form' do
-      visit '/'
+      visit '/sessions/new'
       user = User.create(username: 'sam', password: 'password')
 
       within("#login") do
@@ -21,7 +21,7 @@ feature 'visiting the homepage' do
     end
 
     scenario 'if a user is logged in, the user can log out' do
-      visit '/'
+      visit '/sessions/new'
       user = User.create(username: 'sam', password: 'password')
 
       within("#login") do
@@ -40,18 +40,11 @@ feature 'visiting the homepage' do
   end
 
   context 'when no user is logged in' do
-    scenario 'the user can login' do
-      user = User.create(username: 'samstew726', password: 'password')
-
+    scenario 'there is a link to the login page' do
       visit '/'
 
-      within("#login") do
-        fill_in 'username', with: 'samstew726'
-        fill_in 'password', with: 'password'
-      end
-
-      click_button 'Login'
-      expect(page).to have_content 'New Bunny Tail'
+      click_link 'Login'
+      expect(page).to have_current_path sessions_new_path
     end
 
     scenario 'there is a link to a registration page' do
