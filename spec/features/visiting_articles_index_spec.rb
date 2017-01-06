@@ -1,10 +1,12 @@
-#commenting out until pge is complete
+require 'rails_helper'
 
-# require 'rails_helper'
+feature "visiting the article index page" do
+  scenario "The user can see a list of all the articles" do
+    visit "/articles"
+    expect(page).to have_content "All Articles"
+    expect(page.has_selector?('ul.articles-list'))
+  end
 
-# feature "visiting the article index page" do
-#   scenario "The user can visit the page that lists all the articles" do
-#     visit "/articles/index"
-#     expect(page).to have_content "All Articles"
-#   end
-# end
+  xscenario "The User can visit the page of a specific article" do
+  end
+end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get "categories/:id/articles" => "categories#show"
 
+  mount Ckeditor::Engine => '/ckeditor'
   resources :categories, only: [:index, :show]
 
   # resources :categories do
@@ -15,4 +16,7 @@ Rails.application.routes.draw do
   post '/sessions', to: 'sessions#create'
   get '/sessions', to: 'sessions#destroy', as: 'logout'
 
+  resources :articles do
+    resources :revisions, only: [:index, :new, :create]
+  end
 end
