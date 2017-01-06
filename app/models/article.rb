@@ -12,4 +12,15 @@ class Article < ActiveRecord::Base
       self.categories << Category.find_by(id: category_id)
     end
   end
+
+  def shorten
+  	body[0...50] + '...'
+  end
+
+  def update_article
+    if self.revisions.any?
+      self.body = self.revisions.last
+    end
+    self
+  end
 end
