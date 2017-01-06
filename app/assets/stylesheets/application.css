@@ -19,8 +19,11 @@
 
  nav {
   float: right;
-  position: static;
-  z-index: 1;
+  display: block;
+ }
+
+ #nav {
+  display: block;
  }
 
  body {
@@ -28,22 +31,25 @@
   color: white;
   margin: 60px;
   font-family: "Helvetica";
+  /*width: 100%;*/
  }
 
  #website-title {
   font-family: "Princess Sofia";
   color: #23AAE1;
   font-size: 5em;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 0;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  display: block;
+  /*margin-top: 0;
   margin: 0 -9999rem;
-  padding: 0.25rem 9999rem;
-  background-color: #192B33;
+  padding: 0.25rem 9999rem;*/
  }
 
  a {
   color: #FF4164;
+  text-decoration: none;
  }
 
  #username-nav {
@@ -72,14 +78,32 @@
 
  #container {
   display: flex;
+  margin-top: 60px;
  }
 
  #articles-list {
   font-size: 30px;
+  list-style: none;
+ }
+
+ #articles-list li {
+  vertical-align: top;
+  display: inline-block;
  }
 
   #category-list {
   font-size: 30px;
+  list-style: none;
+ }
+
+ #tm {
+  color: #FF4164;
+ }
+
+ footer {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
  }
 
 

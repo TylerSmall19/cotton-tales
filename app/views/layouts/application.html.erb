@@ -9,6 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id='nav'>
   <nav> <%= link_to 'Home', root_path %> |
     <% if current_user %>
       <%= link_to 'Logout', logout_path %> |  <%= link_to 'New Bunny Tail', new_article_path %> | <span id='username-nav'>Logged in as <%= current_user.username %></span></nav>
@@ -19,9 +20,13 @@
       <div id="login-form" style="display:none;"></div></nav>
 
   <% end %>
+</div>
 
-  <h1 id="website-title"> The Rabbit Hole </h1>
+  <h1 id="website-title">The Rabbit Hole</h1>
 <%= yield %>
-
+<footer>
+  <%= link_to 'created by Team Time', 'https://github.com/TylerSmall19/cotton-tales' %><span id="tm">&trade;</span>
+</footer>
 </body>
+
 </html>
