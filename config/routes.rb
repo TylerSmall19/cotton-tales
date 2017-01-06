@@ -6,10 +6,9 @@ Rails.application.routes.draw do
   # resources :categories do
   #   resources :articles
   # end
-  get "/articles/:id/edit" => "revisions#new"
-  resources :revisions, only: [:show, :index, :create, :new]
+
   resources :articles, except: :edit
-  # get "/articles/:id/edit" => "revisions#new"
+  get "/articles/:id/edit" => "revisions#new"
   # get "categories/:id/articles" => "categories#show"
   resources :users, only: [:new, :create]
 

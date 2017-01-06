@@ -9,6 +9,8 @@ class RevisionsController < ApplicationController
   end
 # GET /articles/:article_id/revisions/new (also edit article)
   def new
+    p params
+    @article = Article.find_by(id: params[:id]).update_article
     @revision = Revision.new
   end
 # POST /articles/:article_id/revisions
