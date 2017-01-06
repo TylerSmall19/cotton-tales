@@ -11,10 +11,6 @@ describe RevisionsController do
     it "responds with status code 200" do
       expect(response).to have_http_status 200
     end
-    # it "assigns all revisions to @revisions" do
-    #   # revision = Revision.create(body: "Revision body", article_id: 1, author_id: 1)
-    #   expect(assigns(:revisions)).to eq(sample_revision)
-    # end
     it "renders the :index template" do
       expect(response).to render_template(:index)
     end
