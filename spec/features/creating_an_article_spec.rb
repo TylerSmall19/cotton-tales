@@ -27,8 +27,6 @@ feature "creating an article" do
     page.check "cute"
     click_button 'Create Article'
 
-    p Article.all
-    save_and_open_page
     expect(Article.count).to be 1
     expect(Article.last.categories.count).to be 1
     expect(Article.last.categories.first.name).to eq 'cute'

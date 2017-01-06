@@ -1,0 +1,6 @@
+<%= form_for [@article, @revision] do |f| %>
+  <%= f.label :body %><br />
+  <%= f.cktext_area :body, value: @article.body %><br />
+
+  <%= f.submit 'Post This Revision' %>
+<% end %>

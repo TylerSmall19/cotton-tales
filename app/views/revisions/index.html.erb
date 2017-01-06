@@ -1,0 +1,11 @@
+<h1>All Revisions of <%=@article.title%></h1>
+<p><%= @revisions.count%> revisions</p>
+
+<ul class='articles-list'>
+  <%  @revisions.each do |revision| %>
+    <li id=<%="revision-" + "#{revision.id}" %> >
+      <%=revision.body.html_safe%>
+      <%=revision.author.username%>
+    </li>
+  <% end %>
+</ul>
