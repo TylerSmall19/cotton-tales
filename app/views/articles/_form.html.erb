@@ -15,7 +15,7 @@
     <%= f.label :category %><br>
 
     <% @categories.each do |category| %>
-      <%= check_box_tag("article[categories][]", category.id, false) %>
+      <%= check_box_tag("article[categories][]", category.id, false, id: category.name) %>
       <%= category.name %>
     <% end %>
 
