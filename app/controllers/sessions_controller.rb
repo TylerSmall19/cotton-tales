@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       if request.xhr?
         redirect_to :back
       else
-        redirect_to :back
+        redirect_to '/'
       end
     else
       @errors = ['Invalid username or password']
