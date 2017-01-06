@@ -1,5 +1,10 @@
 <div id="container">
   <div id="home-cat-display">
+  <div class='search'>
+ <%= form_tag(search_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Articles" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %> </div>
   <h1>Categories</h1>
     <ul id='category-list'>
       <% if @categories.any?  %>
@@ -16,7 +21,7 @@
       <% if @articles.any?  %>
         <% @articles.each do |art| %>
           <li> <% if art.thumbnail %> <img src="<%=art.thumbnail%>" style="width:100px;height:100px"> <% else %> <img src="https://raw.githubusercontent.com/TylerSmall19/cotton-tales/NoahRGuy-logo/logo.png" style="width:100px;height:100px"> <% end %> <%= link_to art.title, article_path(art) %> <br>
-          <p><%= art.shorten %></p>  
+          <p><%= art.shorten %></p>
           </li>
         <% end %>
       </ul>

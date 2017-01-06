@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'articles/search' => 'articles#search', as: 'search'
   resources :articles
   resources :users, only: [:new, :create]
 
