@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   # resources :categories do
   #   resources :articles
   # end
-
-  resources :articles, except: :edit
   get "/articles/:id/edit" => "revisions#new"
+  resources :articles, except: :edit
+
   # get "categories/:id/articles" => "categories#show"
   resources :users, only: [:new, :create]
 
@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   get '/sessions', to: 'sessions#destroy', as: 'logout'
 
   resources :articles do
-    resources :revisions, only: [:index, :new, :create]
+    resources :revisions, only: [:index, :new, :create, :show]
   end
 end

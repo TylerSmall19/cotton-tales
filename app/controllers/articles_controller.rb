@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    p params
     @article = Article.find_by(id: params[:id])
     @revisions = @article.revisions
     if @revisions
@@ -11,9 +12,9 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def edit
-    @article = Article.find_by(id: params[:id])
-  end
+  # def edit
+  #   @article = Article.find_by(id: params[:id])
+  # end
 
   def new
     @article = Article.new

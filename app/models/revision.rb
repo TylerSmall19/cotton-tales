@@ -8,9 +8,9 @@ class Revision < ActiveRecord::Base
 
   private
     def set_author
-      if self.author.nil?
-        self.author = User.create(username: generate_user, password: generate_password)
-      end
+      # if self.author.nil?
+      self.author = User.create(username: generate_user, password: generate_password)
+      # end
     end
 
     def generate_user
