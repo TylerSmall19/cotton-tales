@@ -35,6 +35,7 @@ feature "creates a new revision and submits it and sees it as new article" do
   visit ("/articles/:id/edit")
   within(".create-revision") do
     expect(page).should have_selector(:link_or_bottom, "Update")
+    fill_in_ckeditor 'revision_body', with: "some text"
   end
 
 
