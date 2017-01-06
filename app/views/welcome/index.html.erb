@@ -15,7 +15,9 @@
     <ul id='articles-list'>
       <% if @articles.any?  %>
         <% @articles.each do |art| %>
-          <li><%= link_to art.title, article_path(art) %></li>
+          <li> <% if art.thumbnail %> <img src="<%=art.thumbnail%>" style="width:100px;height:100px"> <% else %> <img src="https://raw.githubusercontent.com/TylerSmall19/cotton-tales/NoahRGuy-logo/logo.png" style="width:100px;height:100px"> <% end %> <%= link_to art.title, article_path(art) %> <br>
+          <p><%= art.shorten %></p>  
+          </li>
         <% end %>
       </ul>
     <% end %>

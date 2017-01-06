@@ -5,7 +5,7 @@
 	<%	@articles.each do |article| %>
 		<li id=<%="article-" + "#{article.id}" %> >
 			<h3> <%= link_to(article.title, article_path(article.id)) %> </h3>
-			<p> <%= article.shorten %> </p>
+			<p> <% if article.thumbnail %> <img src="<%=article.thumbnail%>" style="width:100px;height:100px"> <% else %> <img src="https://raw.githubusercontent.com/TylerSmall19/cotton-tales/NoahRGuy-logo/logo.png" style="width:100px;height:100px"> <% end %> <%= article.shorten %> </p>
 		</li>
 	<% end %>
 </ul>
