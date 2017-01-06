@@ -30,6 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'unicorn'
 gem 'ckeditor'
 gem 'paperclip'
+gem 'nokogiri'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

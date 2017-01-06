@@ -17,7 +17,7 @@ RSpec.describe Article, type: :model do
       expect(article.author).to be_an_instance_of(User)
     end
     it "can shorten the body into a summary" do
-      expect(article.shorten).to eq "Test body.Test body.Test body.Test body.Test body...."
+      expect(article.shorten).to eq "Test body.Test body.Test body.Test body.Test body.T..."
     end
   end
 end
