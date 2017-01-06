@@ -28,6 +28,7 @@ feature "creating an article" do
     p Article.all
     save_and_open_page
     expect(Article.count).to be 1
-    expect(Article.last.categories).to include 'cute'
+    expect(Article.last.categories.count).to be 1
+    expect(Article.last.categories.first.name).to eq 'cute'
   end
 end
