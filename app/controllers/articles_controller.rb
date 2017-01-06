@@ -5,6 +5,10 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find_by(id: params[:id])
+    @revisions = @article.revisions
+    if @revisions
+      @revision = @revisions.last
+    end
   end
 
   def edit
