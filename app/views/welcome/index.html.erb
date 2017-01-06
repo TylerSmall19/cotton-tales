@@ -9,3 +9,14 @@
     </ul>
   <% end %>
 </div>
+
+<h1>Articles</h1>
+<div>
+  <ul id='articles-list'>
+    <% if @articles.any?  %>
+      <% @articles.each do |art| %>
+        <li><%= link_to art.name, article_path(art) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
