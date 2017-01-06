@@ -4,9 +4,9 @@
   <% if @category.articles.any? %>
    <ol class="inline recent-articles"> <% @category.articles.each do |article| %>
       <strong><li><p><%= article.title %></p></li></strong>
-      <p><%= article.body.html_safe %></p>
-      <br />
+      <p> <% if article.thumbnail %> <img src="<%=article.thumbnail%>" style="width:100px;height:100px"> <% else %> <img src="https://raw.githubusercontent.com/TylerSmall19/cotton-tales/NoahRGuy-logo/logo.png" style="width:100px;height:100px"> <% end %> <%= article.body.html_safe %></p>
       <p><%= link_to "Show More", article_path(article) %></p>
+      <br />
     <%end%>
     </ol>
   <%else%>
