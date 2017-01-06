@@ -1,7 +1,13 @@
 <div id="container">
   <div id="home-cat-display">
+    <div class='search'>
+ <%= form_tag(search_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Articles" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %> </div>
   <h1><%= link_to 'Categories', categories_path %></h1>
     <div id='category-list'>
+
       <% if @categories.any?  %>
         <% @categories.each do |cat| %>
           <span><%= link_to cat.name, category_path(cat) %><br></span>

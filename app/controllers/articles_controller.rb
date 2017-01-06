@@ -31,6 +31,11 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def search
+    @articles = Article.search(params[:search]).order("created_at DESC")
+    render 'results'
+  end
+
   private
   def article_params
     params.require(:article).permit(:title, :body, categories: [])
