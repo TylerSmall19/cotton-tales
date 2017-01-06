@@ -35,3 +35,11 @@
  a {
   color: #FF4164;
  }
+
+ #username-nav {
+  color: #FF4164;
+ }
+
+ #login-form {
+  display: inline-block;
+ }

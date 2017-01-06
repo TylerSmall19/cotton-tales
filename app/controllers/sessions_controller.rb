@@ -7,9 +7,18 @@ class SessionsController < ApplicationController
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
+      if request.xhr?
+        redirect_to :back
+      else
+        redirect_to :back
+      end
     else
       @errors = ['Invalid username or password']
-      render 'new'
+      if request.xhr?
+        render partial: 'errors', status: 422
+      else
+        render 'new'
+      end
     end
   end
 
