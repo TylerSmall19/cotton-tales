@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :articles
   get "categories/:id/articles" => "categories#show"
-  resources :users, only: [:new]
+
+  resources :users, only: [:new, :create]
 
   mount Ckeditor::Engine => '/ckeditor'
   resources :categories, only: [:index, :show]
@@ -10,9 +11,8 @@ Rails.application.routes.draw do
   #   resources :articles
   # end
 
-  resources :users, only: [:new, :create]
-
   root 'welcome#index'
+  get '/sessions/new', to: 'sessions#new'
   post '/sessions', to: 'sessions#create'
   get '/sessions', to: 'sessions#destroy', as: 'logout'
 

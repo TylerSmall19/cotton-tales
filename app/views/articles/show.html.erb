@@ -1,8 +1,10 @@
 <h1><%= @article.title %></h1>
-
-<% if @revisions %>
-  <h3>This article has <%= @revisions.length %> revisions.</h3>
-<% else %>
-  <h3>This article has no revisions. Make one here</h3>
-  <p><%= @article.body %></p>
-<% end %>
+<h3>This article has <%= @revisions.count %> revisions. <%= link_to "History", article_revisions_path(@article) %></h3><br>
+<h4>Categories: </h4>
+  <ul>
+    <% @article.categories.each do |category| %>
+    <li><%= link_to "#{category.name}", category_path(category)%></li>
+    <% end %>
+  </ul>
+<p><%= @article.body.html_safe %></p><br>
+<div><%= link_to "Edit", edit_article_path(@article) %></div>
