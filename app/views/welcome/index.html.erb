@@ -1,2 +1,23 @@
+<div id="container">
+  <div id="home-cat-display">
+  <h1>Categories</h1>
+    <ul id='category-list'>
+      <% if @categories.any?  %>
+        <% @categories.each do |cat| %>
+          <li><%= link_to cat.name, category_path(cat) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
 
-
+  <div id="home-art-display">
+    <h1>Articles</h1>
+    <ul id='articles-list'>
+      <% if @articles.any?  %>
+        <% @articles.each do |art| %>
+          <li><%= link_to art.name, article_path(art) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>

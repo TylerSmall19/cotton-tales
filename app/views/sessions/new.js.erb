@@ -1,0 +1,9 @@
+$('#login-form').html("<%= j (render 'users/login') %>");
+$('#login-form').slideDown(350);
+$('#login-link').hide();
+
+
+$('#login-form').on("ajax:error", function(e, xhr, status, error) {
+
+  $(this).prepend(xhr.responseText);
+})

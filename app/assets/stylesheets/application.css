@@ -24,14 +24,55 @@
  body {
   background-color: #0A3040;
   color: white;
+  margin: 60px;
+  font-family: "Helvetica";
  }
 
  #website-title {
   font-family: "Princess Sofia";
   color: #23AAE1;
-  font-size: 4em;
+  font-size: 5em;
  }
 
  a {
   color: #FF4164;
  }
+
+ #username-nav {
+  color: #FF4164;
+ }
+
+ #login-form {
+  display: inline-block;
+ }
+
+ #home-cat-display {
+  width: 40%;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin: 0 auto;
+ }
+
+ #home-art-display {
+  width: 40%;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin: 0 auto;
+ }
+
+ #container {
+  display: flex;
+ }
+
+ #articles-list {
+  font-size: 30px;
+ }
+
+  #category-list {
+  font-size: 30px;
+ }
+
+
+
