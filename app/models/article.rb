@@ -8,6 +8,6 @@ class Article < ActiveRecord::Base
   validates :author, presence: true
 
   def stub
-  	body[0...50]
+  	body[0...50] + '...'
   end
 end
