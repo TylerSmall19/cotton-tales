@@ -22,7 +22,10 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.author = current_user
     if @article.save
+<<<<<<< HEAD
       @revisions = @article.revisions
+=======
+>>>>>>> master
       render 'show'
     else
       @categories = Category.all
