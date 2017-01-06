@@ -36,22 +36,6 @@ describe ArticlesController do
     end
   end
 
-  describe "GET #edit" do
-    before(:each) do
-      get :edit, {id: sample_article.id}
-    end
-
-    it "responds with status 200" do
-      expect(response).to have_http_status 200
-    end
-    it "assigns the correct article as @article" do
-      expect(assigns(:article)).to eq(sample_article)
-    end
-    it "renders the edit template" do
-      expect(response).to render_template(:edit)
-    end
-  end
-
   describe "GET #new" do
     before(:each) do
       get :new
