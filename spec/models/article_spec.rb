@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-  let(:author) { User.create(username: "test", password: "test") }
+  let(:author) { User.create(username: "test", password: "test" * 50) }
   let(:article) { Article.new(title: "Test", body: "Test body.", author_id: author.id) }
   describe Article do
     it "has a title" do
@@ -15,6 +15,9 @@ RSpec.describe Article, type: :model do
     it "has an author" do
       expect(article.author).to eq author
       expect(article.author).to be_an_instance_of(User)
+    end
+    it "can shorten the body into a summary" do
+      expect(article.shorten).to eq "texttexttexttexttexttexttexttexttexttexttexttexttex"
     end
   end
 end
