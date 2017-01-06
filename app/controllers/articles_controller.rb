@@ -5,7 +5,6 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find_by(id: params[:id])
-    p @article.categories
     @revisions = @article.revisions
     @article.update_article
   end
