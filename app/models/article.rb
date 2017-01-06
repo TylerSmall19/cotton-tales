@@ -31,7 +31,7 @@ class Article < ActiveRecord::Base
 
   def update_article
     if self.revisions.any?
-      self.body = self.revisions.last
+      self.body = self.revisions.last.body
     end
     self
   end
