@@ -21,6 +21,11 @@ class Article < ActiveRecord::Base
     text[0..50] + "..."
   end
 
+  def thumbnail
+    snippet = Nokogiri::HTML::Document.parse(body)
+    thumbnail = snippet.css('img').attr('src')
+  end
+
   def update_article
     if self.revisions.any?
       self.body = self.revisions.last
