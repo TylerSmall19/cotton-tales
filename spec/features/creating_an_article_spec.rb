@@ -11,6 +11,8 @@ feature "creating an article" do
 
     visit '/'
 
+    click_link "Login"
+
     within("#login") do
       fill_in 'username', with: 'test'
       fill_in 'password', with: 'password'

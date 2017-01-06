@@ -1,3 +1,5 @@
+require 'nokogiri'
+
 class Article < ActiveRecord::Base
   belongs_to :author, class_name: "User"
   has_many :categorizations
@@ -14,7 +16,14 @@ class Article < ActiveRecord::Base
   end
 
   def shorten
-  	body[0...50] + '...'
+  	snippet = Nokogiri::HTML::Document.parse(body)
+    text = snippet.css('p').map(&:text).pop
+    text[0..50] + "..."
+  end
+
+  def thumbnail
+    snippet = Nokogiri::HTML::Document.parse(body)
+    thumbnail = snippet.css('img').attr('src')
   end
 
   def update_article

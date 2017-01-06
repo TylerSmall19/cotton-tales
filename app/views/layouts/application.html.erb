@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RabbitSite</title>
+  <title>The Rabbit Hole</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%=  stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Princess+Sofia'%>
@@ -11,9 +11,12 @@
 <body>
   <nav> <%= link_to 'Home', root_path %> |
     <% if current_user %>
-      <%= link_to 'Logout', logout_path %> |  <%= link_to 'New Bunny Tail', new_article_path %> </nav>
+      <%= link_to 'Logout', logout_path %> |  <%= link_to 'New Bunny Tail', new_article_path %> | <span id='username-nav'>Logged in as <%= current_user.username %></span></nav>
     <% else %>
-      <%= link_to 'Register', new_user_path %> | <span id="login"> <%= render "users/login" %> </span> </nav>
+      <%= link_to 'Register', new_user_path %> |  <%= link_to 'Login', sessions_new_path, id: 'login-link', remote: true %>
+
+      <div id="login-form" style="display:none;"></div></nav>
+
   <% end %>
 
   <h1 id="website-title"> The Rabbit Hole </h1>

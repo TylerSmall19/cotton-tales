@@ -1,3 +1,5 @@
+<%= render 'sessions/errors' %>
+
 <%= form_for @user, url: { action: "create"}, html: { id: "new-user-form"} do |f|  %>
   <%= f.label :username %>
   <%= f.text_field :username %><br>

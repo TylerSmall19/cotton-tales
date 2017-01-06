@@ -7,9 +7,7 @@ class ArticlesController < ApplicationController
     p params
     @article = Article.find_by(id: params[:id])
     @revisions = @article.revisions
-    if @revisions
-      @revision = @revisions.last
-    end
+    @article.update_article
   end
 
   # def edit
@@ -25,6 +23,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.author = current_user
     if @article.save
+      @revisions = @article.revisions
       render 'show'
     else
       @categories = Category.all
