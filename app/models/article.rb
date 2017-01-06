@@ -10,4 +10,11 @@ class Article < ActiveRecord::Base
   def shorten
   	body[0...50] + '...'
   end
+
+  def update_article
+    if self.revisions.any?
+      self.body = self.revisions.last
+    end
+    self
+  end
 end

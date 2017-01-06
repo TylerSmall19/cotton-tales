@@ -27,7 +27,7 @@ feature "visiting the categories page" do
     expect(page).to have_content 'All Categories'
   end
 
-  scenario "the user sees a list of articles and can view them" do
+  scenario "the user visits a category pages, can view all linked articles and can view them" do
     category = Category.create(:name => "Cute")
     new_user = User.create(username: "Tyler", password: "password")
     new_article = category.articles.create(title: "Bunnies!", body: "Body of bunnies", author_id: new_user.id)
